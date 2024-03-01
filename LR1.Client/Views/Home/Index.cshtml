@@ -1,0 +1,19 @@
+﻿@model LR1.Client.Controllers.ProcessTextViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <form action="/Home/Index" method="post">
+        @Html.TextAreaFor(m => m.TextToProcess, new { @class = "form-control" })
+        <input type="submit" value="Send request" />
+    </form>
+    
+    @if(Model is { ProcessedText: not null })
+    {
+        <h2>Processed text</h2>
+        <p>@Model.ProcessedText</p>
+    }
+</div>
