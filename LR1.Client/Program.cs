@@ -7,7 +7,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddHttpClient<ITextProcessingService, TextProcessingService>(c =>
 {
-    c.BaseAddress = new Uri("http://192.168.1.3:5270");
+    var textProcessingServiceUri = builder.Configuration["TextProcessingServiceUri"];
+    c.BaseAddress = new Uri(textProcessingServiceUri!);
 });
 
 var app = builder.Build();
