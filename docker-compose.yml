@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  lr1.api:
+    image: ${DOCKER_REGISTRY-}lr1api
+    build:
+      context: .
+      dockerfile: LR1.Api/Dockerfile
+  lr1.client:
+    image: ${DOCKER_REGISTRY-}lr1client
+    build:
+      context: .
+      dockerfile: LR1.Client/Dockerfile
