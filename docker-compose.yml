@@ -5,7 +5,7 @@ services:
     image: ${DOCKER_REGISTRY-}lr1api
     build:
       context: .
-      dockerfile: LR1.Api/Dockerfile
+      dockerfile: LR1.API/Dockerfile
   lr1.client:
     image: ${DOCKER_REGISTRY-}lr1client
     build:
